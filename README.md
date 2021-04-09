@@ -116,7 +116,7 @@ create customer account in metamask by importing private key of an account from 
 import Admin account by using private key=54897ed568fa7226c320e8db70c2f2ced0d6a2a36118d78508ae3920ad26b2a7
 
 ```
-**Step 2:** Setup Water-Exchange  Account
+**Step 2:** Setup Power-Share  Account
 ```
 import Water-Exchange account by using private key=f086385030b9f3e0335ddded71a5d914f4ca9a38d5b5e97e80a725ade901f76c
 
@@ -137,7 +137,7 @@ should have some Ether for transactions
 Create an account in metamask
 should have some Ether for transactions 
 ```
-**Step 3:** Setup Water-Exchange Account
+**Step 3:** Setup Elektro-Exchange Account
 ```
 Create an account in metamask
 should have some Ether for transactions 
@@ -152,7 +152,7 @@ should have some Ether for transactions
 
 ***2** Avoid white spaces while copying and pasting account address
 
-**Step 1:** REGISTERING WATER EXCHANGE
+**Step 1:** REGISTERING Consumer
 ```
 1.Select Admin account and and make sure it is connected
 2.Go http://localhost:3000/admin or Admin on navbar, Provide exchange registration details and click submit
@@ -164,7 +164,7 @@ Location:tvm
 cluster:South kerala
 Select APPROVAL CERTIFICATE FILE:file
 ```
-**Step 2:** UPDATE WATER QUANTITY & DELIVERY CHARGE IN WATER EXCHANGE
+**Step 2:** UPDATE OLD READING & POWER SHARE READING
 ```
 1.Select Consumer support and and make sure it is connected
 2.Go http://localhost:3000/consumersignup or Register on navbar, Provide consumer old readings and click update  consumer readings.
