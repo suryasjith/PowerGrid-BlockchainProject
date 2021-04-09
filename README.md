@@ -28,7 +28,7 @@ or
 ```
 geth --identity "miner" --networkid 7877 --datadir data --nodiscover --mine --rpc --rpcport "8646" --unlock "0xf7d74504257947d965547ac3336c66cce68413a5" --ipcpath "~/.ethereum/geth.ipc" --rpccorsdomain "*" --rpcapi "db,miner,eth,net,web3,personal" --allow-insecure-unlock
 ```
-**Password: vimal
+**Password: KSEB
 ```
 copy Ipc path
 ```
