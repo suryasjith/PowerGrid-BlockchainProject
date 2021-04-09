@@ -101,7 +101,7 @@ If using ganache then use localhost 7545 with chainId 5777
 ```
 copy contract deployer private key from ganache and import account as Admin in metamask
 ```
-**Step 2:** Setup Water-Exchange Account
+**Step 2:** Setup Power-Share Account
 ```
 create Water-Exchange account in metamask by importing private key of an account from ganache
 ```
