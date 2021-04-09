@@ -156,7 +156,7 @@ should have some Ether for transactions
 ```
 1.Select Admin account and and make sure it is connected
 2.Go http://localhost:3000/admin or Admin on navbar, Provide exchange registration details and click submit
-3.give water exchange account address for exchange address field
+3.give consumer account address for exchange address field
 
 eg:
 Exchange Address:0x4E35E79b19EDF952FA204940Ec6893861015ac36
@@ -166,10 +166,10 @@ Select APPROVAL CERTIFICATE FILE:file
 ```
 **Step 2:** UPDATE WATER QUANTITY & DELIVERY CHARGE IN WATER EXCHANGE
 ```
-1.Select Water-Exchange account and and make sure it is connected
-2.Go http://localhost:3000/exchangesignup or Exchange on navbar, Provide waterexchange water updation details and click add water.
-3.provide delivery charge and click update
-eg:Select Water Type:Drinking
+1.Select Consumer support and and make sure it is connected
+2.Go http://localhost:3000/consumersignup or Register on navbar, Provide consumer old readings and click update  consumer readings.
+3.provide shared grid unit
+eg:Select Power Type:Drinking
 Amount to Increment(in kl ):100
 Update Delivery charge:2 OXD
 ```
@@ -178,45 +178,45 @@ Update Delivery charge:2 OXD
 1.Select Customer account and and make sure it is connected
 2.Go http://localhost:3000/signup or click User on navbar, Provide user category and click register
 ```
-**Step 4:** Buytokens as customer
+**Step 4:** Add reading as customer
 ```
 Provide token quantity in Buytoken form and click submit 
 eg:Token Amount:2
 ```
-**Step 5:** Buywater as customer
+**Step 5:** Add grid shared as customer
 ```
-1.select water exchange to purchase by selecting cluster in AVAILABLE WATER EXCHANGES
-2.copy exchange address from the exchange list
-3.Paste to Exchange Address field in Buy Water form
-4.provide details for purchase
+1.select grid share to purchase by selecting cluster in AVAILABLE Consumer Id
+2.copy share address from the power share list
+3.Paste to Share Address field in get tokens form
+4.provide details for completion
 eg:
 Exchange Address:0xc839f437752f95a86ed2f8DDb27843DfFAF377ea
-WaterType:Drinking
-Water Quantity(kl):2
+connectionType:Shared
+Shared Quantity(kl):2
 Delivery Cluster:South kerala
 Delivery Location:tvm
 contact no:1234567789
 ```
-**Step 6:** Trigger Delivery as Water-Exchange
+**Step 6:** Trigger SharedGrid as Total tokens
 ```
-1.Select Water-Exchange account and and make sure it is connected
-2.Go http://localhost:3000/exchangesignup or click Exchange on navbar
-3.click deliver button on DELIVERY PENDING LIST
+1.Select Shared account and and make sure it is connected
+2.Go http://localhost:3000/powersignup or click Exchange on navbar
+3.click generate bill button on Get bill
 ```
-**Step 7:** Trigger Delivery confirmation as Customer
+**Step 7:** Trigger Bill confirmation as Customer
 ```
 1.Select Customer account and and make sure it is connected
 2.Go http://localhost:3000/user or click User on navbar
 3.click Received button on DELIVERED LIST
 ```
-**Step 8:** Selltokens as Water-Exchange
+**Step 8:** SellTokens as Rewards
 ```
-1.Select water-exchange account and and make sure it is connected
+1.Select powerShare account and and make sure it is connected
 2.Go http://localhost:3000/exchangesignup or click Exchange on navbar
-3.Enter the quantity to sell in sellTokens form
+3.Enter the quantity to sell in sell Tokens form
 
 ```
-**Step 9:** To Reject delivery as Customer
+**Step 9:** To Reject Bill as Customer
 ```
 Repeat Steps from step 4 to 6
 1.Select Customer account and and make sure it is connected
