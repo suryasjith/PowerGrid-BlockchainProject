@@ -6,16 +6,19 @@ const Consumption = artifacts.require("Consumption");
 module.exports = async function(deployer) {
 
     await deployer.deploy(Elektron);
-    const token = await Elektron.deployed();
+    const token = await Elektron.deployed(); 
+    
+    
+    await deployer.deploy(Admin,token.address);
+    const admin = await Admin.deployed();
 
-    await deployer.deploy(Consumption,token.address);
+    await deployer.deploy(Consumption,token.address,admin.address);
     const consumption = await Consumption.deployed();
 
 
-    await token.transfer(consumption.address,"10000000000000000000000");
+    await token.transfer(admin.address,"10000000000000000000000");
 
-    await deployer.deploy(Admin);
-    const admin = await Admin.deployed();
+  
 
     
 

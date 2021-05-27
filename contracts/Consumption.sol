@@ -1,96 +1,91 @@
-// SPDX-License-Identifier: MIT
+ // SPDX-License-Identifier: MIT
 pragma solidity ^0.6.0;
-import"./AdminPower.sol";
+import"./Owner.sol";
 import"./Elektron.sol";
 import"./Admin.sol";
 
-contract Consumption is AdminPower,Admin
+contract Consumption is Owner
 {
 
 
 
 
-    //no. of elektrons per unit
-    uint basevalue=1;
-    //first given reading
-    uint firstReading;
+  
     // state variable of tokens instance
     Elektron public token;
 
-    constructor(Elektron _token) public {
+    Admin public admin;
+
+    constructor(Elektron _token , Admin _admin) public {
 
       token = _token;
+
+      admin = _admin;
 
     }
 
     
 
+       function PaymentDetails(uint _consumerNumber) public view returns(address _address, string  memory _uname, uint _rewardamount, uint _billamount){
+         
+         _address=admin.consumer[_consumerNumber].user_address;
 
+         _uname=admin.consumer[_consumerNumber].username;
 
-        //to store consumer consumption details
-    struct consumerDetails
-    {
-        //to store previous unit reading
-        uint previousReading;
+         _rewardamount=admin.consumer[_consumerNumber].rewardamount;
 
-        //to store current reading
-        uint currentReading;
+         _billamount=admin.consumer[_consumerNumber].billamount;
+         
+         
+         
+        //  this is the method to be tried
+          // return admin.getConsumer(_consumerNumber);
 
-        //to store Power Grid shared unit
-        uint unitShared;
-
-        //to store total unit after claculatinf with shared unit
-         uint due;
-        
-        //to store current consumption of unit
-        uint currentconsumption;
-        
-        //to store reward tokens amount
-        uint rewardamount; 
-
-        //to store power shared
-
-       
-
-
-    }
+       }
      
+     function Payment(uint amount) public {
+
+       // if address error comes try changing admin
+       token.transferFrom(msg.sender,address(admin),amount)
+
+
+     }
      
 
 
       //to store consumers consumption details
-    mapping(address=>consumerDetails) public unitBalanceCheck;
+    // mapping(address=>consumerDetails) public unitBalanceCheck;
 
 
   //function to calculate amount of units used and calculates the amount of token to be rewarded after checking both shared unit and consumed unit
   //this function uses users current reading to check with previous reading of the same user 
 
-    function totalUnitConsumed (address _user,uint _currentReading,uint _unitshared, uint _pReading) public onlyOwner
-    {
-        //storing current reading
-      unitBalanceCheck[_user].currentReading = _currentReading;
+    // function totalUnitConsumed (address _user,uint _currentReading,uint _unitshared, uint _pReading) public onlyOwner
+    // {
+    //     //storing current reading
+    //   unitBalanceCheck[_user].currentReading = _currentReading;
 
-      //storing shared unit
-      unitBalanceCheck[_user].unitShared = _unitshared;
+    //   //storing shared unit
+    //   unitBalanceCheck[_user].unitShared = _unitshared;
 
-      unitBalanceCheck[_user].previousReading = registration[_pReading].prevReading;
-      //calculating total unit consumed
-      unitBalanceCheck[_user].currentconsumption=_currentReading-unitBalanceCheck[_user].previousReading;
+    //   unitBalanceCheck[_user].previousReading = registration[_pReading].prevReading;
+    //   //calculating total unit consumed
+    //   unitBalanceCheck[_user].currentconsumption=_currentReading-unitBalanceCheck[_user].previousReading;
 
-      //condition to check how much tokens to be rwarded and total of consumption. 
-      if(unitBalanceCheck[_user].currentconsumption>=_unitshared)
-      {
-        unitBalanceCheck[_user].due=unitBalanceCheck[_user].currentconsumption-_unitshared;
+    //   //condition to check how much tokens to be rwarded and total of consumption. 
+    //   if(unitBalanceCheck[_user].currentconsumption>=_unitshared)
+    //   {
+    //     unitBalanceCheck[_user].due=unitBalanceCheck[_user].currentconsumption-_unitshared;
 
-      }
-      else
-      {
-        unitBalanceCheck[_user].rewardamount=_unitshared-unitBalanceCheck[_user].currentconsumption;
-        token.transfer(_user, unitBalanceCheck[_user].rewardamount);
-      }
+    //   }
+    //   else
+    //   {
+    //     unitBalanceCheck[_user].rewardamount=_unitshared-unitBalanceCheck[_user].currentconsumption;
+    //     token.transfer(_user, unitBalanceCheck[_user].rewardamount);
+    //   }
     
 
-    }
+    // }
 
     
 
